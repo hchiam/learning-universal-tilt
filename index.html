@@ -1,0 +1,71 @@
+<script src="https://unpkg.com/universal-tilt.js"></script>
+
+<style>
+  body {
+    background: #333;
+    color: snow;
+    padding: 100px;
+  }
+
+  .tilt {
+    background: red;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .tilt > .tilt-element-inner-text {
+    transform: translateZ(20px);
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    line-height: 50px;
+    font-family: avenir, arial, tahoma, monospace;
+
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+
+  .tilt > .tilt-element-inner-text.middle {
+    top: 10px;
+    left: 25px;
+    background: rgba(0, 0, 255, 0.75);
+  }
+
+  .tilt > .tilt-element-inner-text.top-right {
+    top: -30px;
+    right: -10px;
+    background: rgba(255, 255, 0, 0.2);
+  }
+</style>
+
+<div class="tilt"
+     data-tilt
+     data-scale="1.2"
+     data-shine="true"
+     data-shine-opacity="0.5"
+     data-shine-save="true"
+     tiltChange>
+  <p class="tilt-element-inner-text middle">Hi!</p>
+  <p class="tilt-element-inner-text top-right">Hi!</p>
+</div>
+
+<script>
+  // make sure to get first: https://unpkg.com/universal-tilt.js
+
+  const elems = document.querySelectorAll('.tilt');
+
+  const tilt = UniversalTilt.init({
+    elements: elems,
+    settings: {
+      // options...
+    },
+    callbacks: {
+      // callbacks...
+    }
+  });
+</script>
